@@ -1,0 +1,14 @@
+/* example of CSS starter code */
+
+:root {
+  /*color palette*/
+  --burnt-orange: #A64833;
+  --peach: #F2B279;
+  --tan: #F2C8A2;
+  --olive: #8A8C54;
+  --forest: #213D40;
+}
+
+* , ::after, ::before {
+  box-sizing: border-box;
+}

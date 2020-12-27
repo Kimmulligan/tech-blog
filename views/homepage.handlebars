@@ -1,0 +1,26 @@
+<div class="row section-wrapper" id="all-items-wrapper">
+    <h3>All Items</h3>
+    <div class="row gallery" id="all-items-gallery">
+        {{#each items}}
+            <div class="col-sm">
+                <div class="card" >
+                    <img class="card-img-top" src="{{photoUrl}}" alt="Card Image Cap">
+                    <div class="card-body">
+                        <h4 class="card-title">{{name}}</h4>
+                        <p class="card-text">{{description}}</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">{{dimensions}}</li>
+                        <li class="list-group-item">{{era}}</li>
+                        <li class="list-group-item">${{price}}</li>
+                    </ul>
+                    <div class="card-body">
+                         <button class="checkout-button" id="{{id}}">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>
+
+<script src="/javascript/checkout-btn.js"></script>
