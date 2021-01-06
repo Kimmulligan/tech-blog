@@ -1,4 +1,14 @@
 const User = require('./User');
-const Item = require('./Item');
+const Comment = require('./Comment');
+const Post = require('./Post');
 
-module.exports = { User, Item };
+Post.belongsTo(User);
+User.hasOne(Post);
+
+Post.hasMany(Comment);
+Comment.belongsTo(Post);
+
+Comment.belongsTo(User);
+User.hasMany(Comment);
+
+module.exports = { User, Comment, Post };
