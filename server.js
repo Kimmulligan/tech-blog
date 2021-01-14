@@ -15,7 +15,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const sess = {
     secret: 'Super secret',
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
     store: new SequelizeStore({
         db: sequelize
     })
@@ -23,8 +23,9 @@ const sess = {
 
 app.use(session(sess));
 app.use(express.urlencoded({ extended: true }));
-app.use('/user', userRouter)
-app.use('/post', postRouter)
+app.use('/api/user', userRouter)
+app.use('/api/post', postRouter)
+app.use(require("./routes/views"))
 
 
 

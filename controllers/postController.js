@@ -1,5 +1,6 @@
 const Post = require("../models/Post");
 const { User } = require("../models");
+const { options } = require("../models/Post");
 const createNewPost = async (req, res, next) => {
   const { title, content } = req.body;
   const response = await Post.create({
@@ -12,6 +13,13 @@ const createNewPost = async (req, res, next) => {
 const findAllPosts = async (req, res, next) => {
   const response = await Post.findAll({ include: User });
   res.json(response);
+};
+const getEditPage = async (req, res, next) => {
+  const editPostId =  req.params.id
+  const response = await Post.findByPk(editPostId, {raw: true});
+  res.render('edit', {
+    post: response
+  });
 };
 const findAllPostsById = async (req, res, next) => {
   const response = await Post.findAll({
@@ -36,12 +44,23 @@ const deletePostById = async (req, res, next) => {
     res.json({ message: `Failed to delete post with the id ${req.params.id}` });
   }
 };
-const updatePostById = async (req, res, next) => {
-  const response = await Post.update({
-    where: {
-      id: req.params.id,
-    },
-  });
+const getNewPage = async (req, res, next) => {
+  //const response = await Post.create({title:});
+  res.render('newPost');
+}
+const createPost = async (req, res, next) => {
+  const id = req.session.user_id
+  console.log('inside createPost');
+  console.log(id);
+  const response = await Post.create({title:req.body.title, content:req.body.content, UserId:req.session.user_id}, {raw: true});
+  res.json(response)
+}
+const editPostById = async (req, res, next) => {
+  console.log(req.params.id);
+  const {title, content} = req.body
+  const response = await Post.update(
+   {title, content}, {where: {id: req.params.id}}
+  );
   if (response > 0) {
     res.json({
       message: `Successfully updated post with the id ${req.params.id}`,
@@ -55,5 +74,8 @@ module.exports = {
   findAllPosts,
   findAllPostsById,
   deletePostById,
-  updatePostById
+  editPostById,
+  getEditPage,
+  getNewPage,
+  createPost
 };

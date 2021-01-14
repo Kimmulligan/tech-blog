@@ -9,6 +9,6 @@
   --forest: #213D40;
 }
 
-* , ::after, ::before {
+/* * , ::after, ::before {
   box-sizing: border-box;
-}
+} */ 

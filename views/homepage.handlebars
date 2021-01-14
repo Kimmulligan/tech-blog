@@ -1,26 +1,21 @@
-<div class="row section-wrapper" id="all-items-wrapper">
-    <h3>All Items</h3>
-    <div class="row gallery" id="all-items-gallery">
-        {{#each items}}
-            <div class="col-sm">
-                <div class="card" >
-                    <img class="card-img-top" src="{{photoUrl}}" alt="Card Image Cap">
-                    <div class="card-body">
-                        <h4 class="card-title">{{name}}</h4>
-                        <p class="card-text">{{description}}</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">{{dimensions}}</li>
-                        <li class="list-group-item">{{era}}</li>
-                        <li class="list-group-item">${{price}}</li>
-                    </ul>
-                    <div class="card-body">
-                         <button class="checkout-button" id="{{id}}">Buy Now</button>
-                    </div>
-                </div>
+<div class="row">
+    <div class="col-sm-12">
+    <h3>Tech Blog</h3>
+    <div class="row">
+        <form>
+            <div class="mb-3">
+                <label for="title" class="form-label">Post Title</label>
+                <input type="text" class="form-control" id="title" aria-describedby="emailHelp">
             </div>
-        {{/each}}
+            <div class="mb-3">
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                <label for="floatingTextarea">Comments</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <button id="logout">Log Out</button>
+    </div>
     </div>
 </div>
 
-<script src="/javascript/checkout-btn.js"></script>
+<script src="/javascript/logout.js"></script>

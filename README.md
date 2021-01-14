@@ -97,3 +97,7 @@ You are required to submit BOTH of the following for review:
 
 - - -
 © 2020 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+
+How to insert a Post from the command line.
+insert into Posts (userId, title, content, createdAt, updatedAt)
+values (4,'First', 'pop', '2021-01-12 23:41:38', '2021-01-12 23:41:38');

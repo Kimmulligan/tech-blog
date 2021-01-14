@@ -1,0 +1,16 @@
+<section>
+  <ul>
+  {{#each posts}}
+ <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{this.title}}</h5>
+    <p class="card-text">{{this.content}}</p>
+    <a href="/api/post/edit/{{this.id}}" class="btn btn-primary">Edit</a>
+  </div>
+</div>
+  {{/each}}
+</ul>
+</section>
+<section>
+ <a href='/api/post/new'><button>Create new post.</button></a> 
+</section>

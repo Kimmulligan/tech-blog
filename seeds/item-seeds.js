@@ -1,22 +1,65 @@
 const sequelize = require('../config/connection');
-const { Item } = require('../models');
+const { Post, User } = require('../models');
 
 
-const itemData = [
+const userData = [
+
+  {
+    userName: 'Kim1',
+    password: "111"
+  },
+  {
+    userName: 'Kim2',
+    password: "111"
+  },
+  {
+    userName: 'kim3',
+    password: "111"
+  },
+]
+const postData = [
 
 {
-
-  "itemType": "Table",
-  "price": "7900",
-  "name": "Unique Wooden Side Table",
-  "description": "This 3-tiered vintage side table makes a big impact with its intricate design and quality wood construction. It’s perfect for resting your Brandy Alexander (with a coaster of course) or as an amazing multi-level plant stand.",
-  "era": "Late 20th Century",
-  "dimensions": "H:22in W:14in x L:25in", 
-  "photoUrl": "https://tinyurl.com/y5frdqgz"
-
-}
-
+  title: 'fun',
+  content: 'tons',
+  UserId: 3
+},
+{
+  title: 'no',
+  content: 'yes',
+  UserId: 2
+},
+{
+  title: 'fun',
+  content: 'tons',
+  UserId: 1
+},
+{
+  title: 'fun',
+  content: 'tons',
+  UserId: 3
+},
+{
+  title: 'fun',
+  content: 'tons',
+  UserId: 2
+},
+{
+  title: 'fun',
+  content: 'tons',
+  UserId: 1
+},
+{
+  title: 'fun',
+  content: 'tons',
+  UserId: 3
+},
 ]
-const seedItems = () => Item.bulkCreate(itemData);
+const seedItems = async() => {
+  await User.bulkCreate(userData, {individualHooks: true})
+  await Post.bulkCreate(postData)
+  
+
+};
 
 module.exports = seedItems;
