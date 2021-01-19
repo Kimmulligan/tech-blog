@@ -11,7 +11,7 @@ const createNewPost = async (req, res, next) => {
   res.json(response);
 };
 const findAllPosts = async (req, res, next) => {
-  const response = await Post.findAll({ include: User });
+  const response = await Post.findAll({ limit: 100, include: User });
   res.json(response);
 };
 const getEditPage = async (req, res, next) => {
