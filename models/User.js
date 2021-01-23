@@ -41,6 +41,5 @@ User.init(
     sequelize,
   }
 );
-User.c
 // Export the model for other files to use
 module.exports = User;
