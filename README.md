@@ -5,7 +5,7 @@
     ![licence badge](https://img.shields.io/github/licence/kimmulligan/tech-blog)
 
 ## Description
-This app allows a user  to sign up, log in and share their thoughts in a post. Then other users can read and comment on the post. 
+This app allows a user to sign up, log in and share their thoughts in a post. Then other users can read and comment on the post. 
 ## Table of Contents
 * [Installation](#installation)
 * [Licence](#licence)
