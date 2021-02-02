@@ -1,5 +1,5 @@
 {
-  "name": "wantings",
+  "name": "tech-blog",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/patinoman/wantings.git"
+    "url": "git+https://github.com/tech-blog.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/patinoman/wantings/issues"
+    "url": "https://github.com/tech-blog/issues"
   },
-  "homepage": "https://github.com/patinoman/wantings#readme",
+  "homepage": "https://github.com/tech-blog#readme",
   "dependencies": {
     "bcrypt": "^5.0.0",
     "connect-session-sequelize": "^7.0.4",
